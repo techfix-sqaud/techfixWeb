@@ -1,0 +1,129 @@
+[
+    {
+        "id": 1,
+        "caption": "Clear Case iPhone 13 ProMax",
+        "price": " From $10",
+        "icon": "images/clearCase.png"
+       
+    },
+    {
+        "id": 2,
+        "caption": "Silicon case iPhone 13 Pro Max",
+        "price": "From $ 10",
+        "icon": "images/siliconBlack.png"
+    },
+    {
+        "id": 3,
+        "caption": "Silicon case iPhone 13 Pro Max",
+        "price": "From $ 10",
+        "icon": "images/siliconWhite.png"
+    },
+    {
+        "id": 4,
+        "caption": "Silicon case iPhone 13 Pro Max",
+        "price": "From $ 10",
+        "icon": "images/siliconBlue.png"
+    },
+    {
+        "id": 6,
+        "caption": "Silicon Case iPhone XS Max",
+        "price": "From $ 10",
+        "icon": "images/siliconBlackXS.png"
+    },
+    {
+        "id": 7,
+        "caption": "Silicon Case iPhone XS Max",
+        "price": "From $ 10",
+        "icon": "images/siliconWhiteXS.png"
+    },
+    {
+        "id": 8,
+        "caption": "Silicon Case iPhone XR",
+        "price": "From $ 10",
+        "icon": "images/siliconBlueXR.png"
+    },
+    {
+        "id": 9,
+        "caption": "Silicon Case iPhone XR",
+        "price": "From $ 10",
+        "icon": "images/siliconYellowXR.png"
+    },
+    {
+        "id": 10,
+        "caption": "Silicon Case iPhone XR",
+        "price": "From $ 10",
+        "icon": "images/siliconOrangeXR.png"
+    },
+    {
+        "id": 11,
+        "caption": "Clear Screen Protector ",
+        "price": "From $ 5",
+        "icon": "images/tg7.png"
+    },
+    {
+        "id": 12,
+        "caption": "Clear Screen Protector ",
+        "price": "From $ 5",
+        "icon": "images/tg11.png"
+    },
+    {
+        "id": 13,
+        "caption": "Clear Screen Protector ",
+        "price": "From $ 5",
+        "icon": "images/tg13.png"
+    },
+    {
+        "id": 14,
+        "caption": "Clear Screen Protector ",
+        "price": "From $ 10",
+        "icon": "images/tms21.png"
+    },
+    {
+        "id": 15,
+        "caption": "Clear Screen Protector ",
+        "price": "From $ 10",
+        "icon": "images/tms22.png"
+    }, 
+    {
+        "id": 16,
+        "caption": "Clear Screen Protector ",
+        "price": "From $ 10",
+        "icon": "images/tms10.png"
+    },
+    {
+        "id": 17,
+        "caption": "Clear Screen Protector ",
+        "price": "From $ 10",
+        "icon": "images/tms20.png"
+    },
+    {
+        "id": 18,
+        "caption": "Privacy Screen Protector ",
+        "price": "From $ 10",
+        "icon": "images/tgP12.png"
+    },
+    {
+        "id": 19,
+        "caption": "Privacy Screen Protector ",
+        "price": "From $ 10",
+        "icon": "images/tgP13.png"
+    },
+    {
+        "id": 20,
+        "caption": "clear Case",
+        "price": "From $ 10",
+        "icon": "images/adapter.png"
+    },
+    {
+        "id": 21,
+        "caption": "cables",
+        "price": "From $ 10",
+        "icon": "images/cable.png"
+    },
+    {
+        "id": 22,
+        "caption": "clear Case",
+        "price": "From $ 10",
+        "icon": "images/iCable.png"
+    }
+]

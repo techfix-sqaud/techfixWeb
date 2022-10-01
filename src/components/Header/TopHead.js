@@ -7,7 +7,7 @@ const TopHead = () => {
 
   useEffect(() => {
     setText("we're Hiring!");
-    setAdsText("ios 16 now available!");
+    // setAdsText("ios 16 now available!");
   }, []);
 
   if (text) {
