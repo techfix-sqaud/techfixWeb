@@ -17,6 +17,7 @@ import MobileApp from "./components/Service/Software/MobileApp";
 import Terms from "./components/Terms&Conditions/Terms";
 import AddNewCustomer from "./components/Admin/Customers/AddNewCustomer";
 import Pos from "./components/POS/Pos";
+import Landing from "./Landing";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -38,6 +39,7 @@ root.render(
         <Route path="/mobileApp" element={<MobileApp />}></Route>
         <Route path="/terms" element={<Terms />}></Route>
         <Route path="/pos" element={<Pos />}></Route>
+        <Route path="/Landing" element={<Landing />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -72,9 +72,14 @@ const Header = () => {
                       Home
                     </Link>
                   </Nav.Link>
-                  <Nav.Link to="/contactus">
+                  <Nav.Link>
                     <Link to="/contactus" id="Link">
                       Contact us
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <Link to="/Landing" id="Link">
+                      Accessories
                     </Link>
                   </Nav.Link>
                   <NavDropdown title="Repairs" id="nav-dropdown">
