@@ -27,13 +27,11 @@ const Home = () => {
       id: 3,
       title: "Tablets",
       img: tablet,
-      text: "",
     },
     {
       id: 4,
       title: "Consoles",
       img: consoles,
-      text: "This service is coming soon",
     },
   ]);
 
@@ -83,6 +81,8 @@ const Home = () => {
   );
 };
 const HomeStyled = styled.div`
+  color: #081c4b;
+
   .h1qoute {
     font-family: AAvantgarde;
     margin-top: 6%;

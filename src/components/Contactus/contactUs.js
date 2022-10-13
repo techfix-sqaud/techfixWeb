@@ -131,7 +131,7 @@ const ContactUs = () => {
                 />
               </Form.Group>
 
-              <Button variant="dark" type="submit">
+              <Button variant="primary" type="submit">
                 Send Message
               </Button>
             </Form>
@@ -148,6 +148,7 @@ const ContactUs = () => {
   );
 };
 const ContactUsStyled = styled.div`
+  color: #081c4b;
   .top {
     text-align: center;
   }

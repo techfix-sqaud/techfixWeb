@@ -153,6 +153,8 @@ const ComputersRepair = () => {
   );
 };
 const ComputersRepairStyled = styled.div`
+  color: #081c4b;
+
   .img {
     width: 100%;
     height: 650px;

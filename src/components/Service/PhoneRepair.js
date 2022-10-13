@@ -136,7 +136,9 @@ const PhoneRepair = () => {
                   key={phone.id}
                 >
                   <ListGroup variant="flush">
-                    <ListGroup.Item style={{ marginbuttom: "2%" }}>
+                    <ListGroup.Item
+                      style={{ marginbuttom: "2%", color: "#081c4b" }}
+                    >
                       <img
                         style={{ width: "50px", height: "50px" }}
                         src={phone.img}
@@ -158,7 +160,9 @@ const PhoneRepair = () => {
                   key={pixel.id}
                 >
                   <ListGroup variant="flush">
-                    <ListGroup.Item style={{ marginbuttom: "2%" }}>
+                    <ListGroup.Item
+                      style={{ marginbuttom: "2%", color: "#081c4b" }}
+                    >
                       <img
                         style={{ width: "50px", height: "50px" }}
                         src={pixel.img}
@@ -179,7 +183,9 @@ const PhoneRepair = () => {
                   key={samsung.id}
                 >
                   <ListGroup variant="flush">
-                    <ListGroup.Item style={{ marginbuttom: "2%" }}>
+                    <ListGroup.Item
+                      style={{ marginbuttom: "2%", color: "#081c4b" }}
+                    >
                       <img
                         style={{ width: "50px", height: "50px" }}
                         src={samsung.img}
@@ -200,6 +206,8 @@ const PhoneRepair = () => {
   );
 };
 const PhoneRepairStyled = styled.div`
+  color: #081c4b;
+
   .img {
     width: 100%;
     //height: 10%;

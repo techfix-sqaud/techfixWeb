@@ -13,7 +13,7 @@ const TrackModal = () => {
 
   const TrackOrder = (event) => {
     event.preventDefault();
-    alert("status is ready for pick up");
+    window.confirm("Please enter a valid Tracking number!");
   };
   return (
     <Modal show={show} onHide={handleClose}>
@@ -28,10 +28,15 @@ const TrackModal = () => {
             controlId="exampleForm.ControlInput1"
           >
             <Form.Label>Order number</Form.Label>
-            <Form.Control type="text" placeholder="order number" autoFocus />
+            <Form.Control
+              type="text"
+              placeholder="order number"
+              autoFocus
+              required
+            />
           </Form.Group>
 
-          <Button variant="dark" type="submit" value="Submit">
+          <Button variant="primary" type="submit" value="Submit">
             Track
           </Button>
         </Form>
