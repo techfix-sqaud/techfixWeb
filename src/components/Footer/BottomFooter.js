@@ -51,7 +51,7 @@ function BottomFooter() {
 }
 
 const ButtomFooterStyled = styled.div`
-  background-color: black;
+  background-color: #081c4b;
   color: white;
   padding: 0.5%;
   .wrap {

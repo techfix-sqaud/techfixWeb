@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Header from "../Header/Header";
 import TopHead from "../Header/TopHead";
-import ipad from "../../Assets/ipad.jpeg";
-import { Row, Col, Container } from "react-bootstrap";
+import ipad from "../../Assets/hiPad.png";
+import { Row, Col } from "react-bootstrap";
+import Quotes from "../Helpers/Quotes";
 import tablet from "../../Assets/tablet.png";
 import ipadv from "../../Assets/ipad.png";
 import Footer from "../Footer/Footer";
@@ -21,19 +22,15 @@ const TabletsRepair = () => {
         </Col>
 
         <Col>
-          <img src={ipad} style={{ width: "100%", height: 600 }} />
+          <img src={ipad} className="topImage" />
         </Col>
       </Row>
-      <Container className="body">
-        <Row>
-          <Col>
-            <img src={tablet} className="imgs" />
-          </Col>
-          <Col>
-            <img src={ipadv} className="imgs" />
-          </Col>
-        </Row>
-      </Container>
+      <div className="body">
+        <img src={tablet} />
+        <img src={ipadv} className="imgs" />
+      </div>
+
+      <Quotes />
       <Footer />
       <BottomFooter />
     </TabletsRepairStyled>
@@ -45,16 +42,19 @@ const TabletsRepairStyled = styled.div`
     margin-top: 15%;
     color: white;
     text-align: center;
-    background-color: black;
+    background-color: #081c4b;
     width: 100%;
   }
-  /* .imgs {
-    width: 200px;
-    height: 200px;
-  } */
+  .imgs {
+    margin-left: 10%;
+  }
+  .topImage {
+    width: 100%;
+    height: 600px;
+  }
   .body {
-    margin: 5%;
-    margin-left: 12%;
+    margin-top: 15%;
+    margin-left: 20%;
   }
   span {
     color: white;
@@ -64,7 +64,24 @@ const TabletsRepairStyled = styled.div`
     color: transparent;
   }
   .topOfPage {
-    background-color: black;
+    background-color: #081c4b;
+  }
+  @media (max-width: 1000px) {
+    .body {
+      margin-left: 2%;
+      margin-right: 10%;
+    }
+    .imgs {
+      margin-left: -2%;
+      margin-right: 10%;
+    }
+    .topImage {
+      height: 200px;
+    }
+    .leftside {
+      margin-left: 0.5%;
+      margin-top: 10%;
+    }
   }
 `;
 export default TabletsRepair;

@@ -63,6 +63,7 @@ const About = () => {
   );
 };
 const AboutStyled = styled.div`
+  color: #081c4b;
   background-color: transparent;
   margin-top: 3%;
   p {

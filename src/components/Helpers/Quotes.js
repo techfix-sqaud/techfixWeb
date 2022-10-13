@@ -8,6 +8,8 @@ import {
   Form,
   FloatingLabel,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 const Quotes = () => {
   return (
@@ -69,8 +71,17 @@ const Quotes = () => {
                 required
               />
             </Form.Group>
+            <p>
+              By clicking "Submit", you authorize TechFix and its stores to
+              contact you with marketing information through written
+              communications, calling or texting you at the phone number(s)
+              you’ve provided. You understand these calls or texts may use
+              computer-assisted dialing and/or prerecorded messages. This
+              authorization is not required to complete the purchase or lease of
+              any Audi product. See our <Link to="/terms">Privacy Policy.</Link>
+            </p>
           </Form>
-          <Button variant="outline-dark" className="Button">
+          <Button variant="outline-primary" className="Button">
             Get Quote
           </Button>
         </Row>
@@ -80,8 +91,8 @@ const Quotes = () => {
 };
 
 const QoutesStyled = styled.div`
+  color: #081c4b;
   margin-top: 5%;
-  //margin-left: 10%;
   margin-bottom: 5%;
   align-items: center;
   Button {

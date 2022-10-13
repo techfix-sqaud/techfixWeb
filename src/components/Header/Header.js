@@ -60,7 +60,10 @@ const Header = () => {
           <Container>
             <Navbar.Brand>
               <Link to="/">
-                <img src={logo}></img>
+                <img
+                  src={logo}
+                  style={{ height: "50px", width: "150px" }}
+                ></img>
               </Link>
             </Navbar.Brand>
             <Navbar.Toggle />
@@ -137,7 +140,7 @@ const Header = () => {
                       className="me-2"
                       aria-label="Search"
                     />
-                    <Button variant="outline-dark" onClick={() => Search()}>
+                    <Button variant="outline-primary" onClick={() => Search()}>
                       Search
                     </Button>
                   </Form>
@@ -145,7 +148,7 @@ const Header = () => {
 
                 {!showSearch && (
                   <Button
-                    variant="outline-dark"
+                    variant="outline-primary"
                     onClick={() => renderSearch(true)}
                   >
                     <FaSearch />
@@ -184,11 +187,17 @@ const TopHeaderStyled = styled.div`
   }
 
   #Link {
-    color: black;
+    color: #5d5d5d;
     text-decoration: none;
   }
   #nav-dropdown {
-    color: black;
+    color: #5d5d5d;
+  }
+
+  @media (max-width: 1000px) {
+    img {
+      margin-left: 2%;
+    }
   }
 `;
 

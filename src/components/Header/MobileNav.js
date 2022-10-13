@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import styled from "styled-components";
-import logo from "../../Assets/logo.png";
+import logo from "../../Assets/mobileLogo.png";
 import { Link } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 const MobileNav = () => {
@@ -45,7 +45,7 @@ const MobileNav = () => {
             onTouchStart={() => setShowLinkList(true)}
             onTouchEnd={() => setShowLinkList(false)}
           >
-            Repair
+            Repair <span className="dropdownSymbol">&#8964;</span>
           </Link>
           {showLinkList && (
             <ul>
@@ -56,7 +56,7 @@ const MobileNav = () => {
                 <Link to="/phone">Phones</Link>
               </li>
               <li>
-                <Link to="/computers">Computers</Link>
+                <Link to="/tablet">Tablets</Link>
               </li>
             </ul>
           )}
@@ -107,12 +107,17 @@ const MobileNavStyled = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #081c4b;
+    /* background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9); */
     overflow-x: hidden;
     transition: 0.5s;
   }
-
+  .dropdownSymbol {
+    font-size: 36px;
+    margin-bottom: 3%;
+    margin-top: -5%;
+  }
   .overlay-content {
     position: relative;
     top: 25%;

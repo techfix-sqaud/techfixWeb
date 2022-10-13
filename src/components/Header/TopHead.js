@@ -27,7 +27,7 @@ const TopHead = () => {
 };
 
 const TopHeadStyled = styled.div`
-  background-color: black;
+  background-color: #081c4b;
   color: white;
   padding: 0.5%;
   .bodyWrapper {

@@ -122,7 +122,7 @@ const Footer = () => {
             </p>
             <Button
               style={{ marginBottom: "2%" }}
-              variant="outline-secondary"
+              variant="outline-light"
               onClick={() => renderSubscriberModal()}
             >
               Join Now
@@ -136,7 +136,7 @@ const Footer = () => {
 };
 
 const FooterStyled = styled.div`
-  background-color: #212529;
+  background-color: #0000b9;
   text-align: justify;
   color: white;
   padding: 0.5%;

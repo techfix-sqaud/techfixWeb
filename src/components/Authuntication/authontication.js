@@ -11,50 +11,35 @@ const AuthoPage = () => {
         <div className="main">
           <input type="checkbox" id="chk" aria-hidden="true" />
 
-          <div className="signup">
+          <div className="login">
             <form>
               <label htmlFor="chk" aria-hidden="true">
                 Login
               </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required=""
-              />
+              <input type="email" name="email" placeholder="Email" required />
               <input
                 type="password"
                 name="pswd"
                 placeholder="Password"
-                required=""
+                required
               />
               <button>Login</button>
               <button onClick={(e) => navigate("/")}>cancel</button>
             </form>
           </div>
 
-          <div className="login">
+          <div className="signup">
             <form>
-              <label htmlFor="chk" aria-hidden="true">
+              <label htmlFor="chk" aria-hidden="true" className="signUpLabel">
                 Sign up
               </label>
-              <input
-                type="text"
-                name="txt"
-                placeholder="User name"
-                required=""
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required=""
-              />
+              <input type="text" name="txt" placeholder="User name" required />
+              <input type="email" name="email" placeholder="Email" required />
               <input
                 type="password"
                 name="pswd"
                 placeholder="Password"
-                required=""
+                required
               />
               <button className="signUpButton">Sign up</button>
             </form>
@@ -73,7 +58,7 @@ const AuthoPageStyled = styled.div`
     align-items: center;
     min-height: 100vh;
     font-family: "Jost", sans-serif;
-    background: linear-gradient(to bottom, #0f0c29, #0b0b0e, #2e2e2e);
+    background: linear-gradient(to bottom, #081c4b, #0000b9, #081c4b);
   }
   .main {
     width: 350px;
@@ -89,10 +74,14 @@ const AuthoPageStyled = styled.div`
   #chk {
     display: none;
   }
-  .signup {
+
+  .login {
     position: relative;
     width: 100%;
     height: 100%;
+  }
+  .signup .signUpLabel {
+    color: #0000b9;
   }
   label {
     color: #fff;
@@ -122,7 +111,7 @@ const AuthoPageStyled = styled.div`
     justify-content: center;
     display: block;
     color: #fff;
-    background: rgb(17, 17, 17);
+    background: #0000b9; /*rgb(17, 17, 17);*/
     font-size: 1em;
     font-weight: bold;
     margin-top: 20px;
@@ -139,7 +128,7 @@ const AuthoPageStyled = styled.div`
     margin: 10px auto;
     justify-content: center;
     display: block;
-    color: rgb(11, 11, 11);
+    color: #0000b9; /*rgb(11, 11, 11);*/
     background: #fff;
     font-size: 1em;
     font-weight: bold;
@@ -151,7 +140,7 @@ const AuthoPageStyled = styled.div`
     cursor: pointer;
   }
 
-  .login {
+  .signup {
     height: 460px;
     background: #eee;
     border-radius: 60% / 10%;
@@ -159,17 +148,17 @@ const AuthoPageStyled = styled.div`
     transition: 0.8s ease-in-out;
   }
   .login label {
-    color: #0f0f0f;
+    color: #fff;
     transform: scale(0.6);
   }
 
-  #chk:checked ~ .login {
+  #chk:checked ~ .signup {
     transform: translateY(-500px);
   }
-  #chk:checked ~ .login label {
+  #chk:checked ~ .signup label {
     transform: scale(1);
   }
-  #chk:checked ~ .signup label {
+  #chk:checked ~ .login label {
     transform: scale(0.6);
   }
 `;
