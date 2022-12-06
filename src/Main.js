@@ -25,7 +25,7 @@ import Tawk from "./Tawk";
 import "../src/admin.css";
 const Main = () => {
   const User = "LoggedIn";
-  if (User === "LoggedInd") {
+  if (User === "LoggedIn") {
     return (
       <BrowserRouter>
         <TopHead />
