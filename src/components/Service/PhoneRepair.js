@@ -8,10 +8,6 @@ import {
   ListGroup,
   Container,
 } from "react-bootstrap";
-import Header from "../Header/Header";
-import TopHead from "../Header/TopHead";
-import Footer from "../Footer/Footer";
-import BottomFooter from "../Footer/BottomFooter";
 import iphoneWall from "../../Assets/iphoneWall.png";
 import SamsungWall from "../../Assets/samsung.png";
 import GoogleWall from "../../Assets/google.png";
@@ -108,9 +104,6 @@ const PhoneRepair = () => {
 
   return (
     <PhoneRepairStyled>
-      <TopHead />
-      <Header />
-
       <Carousel style={{ margintop: "2%", marginbuttom: "2%", zIndex: "-1" }}>
         <Carousel.Item>
           <img className="img" src={ios16} alt="ios" />
@@ -200,8 +193,6 @@ const PhoneRepair = () => {
         </div>
         <Quotes />
       </Container>
-      <Footer />
-      <BottomFooter />
     </PhoneRepairStyled>
   );
 };

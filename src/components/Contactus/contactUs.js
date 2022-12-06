@@ -1,29 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import {
-  Form,
-  Row,
-  Col,
-  FloatingLabel,
-  Button,
-  Container,
-} from "react-bootstrap";
-import TopHead from "../Header/TopHead";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import BottomFooter from "../Footer/BottomFooter";
+import { Form, Row, Col, Button } from "react-bootstrap";
 import wallpaper from "../../Assets/cor.jpeg";
-import PopUp from "../Helpers/PopUp";
+import { Link } from "react-router-dom";
+import { BsWhatsapp, BsEnvelope, BsPhone } from "react-icons/bs";
+import HelperMethods from "../Helpers/HelperMethods";
 //import TechFixAPI from "../Helpers/Axios";
 
 const ContactUs = () => {
-  const [data, setData] = useState({
-    sender_name: "",
-    sender_email: "",
-    subject: "",
-    msg: "",
-  });
-
+  const [data, setData] = useState({});
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const submit = (e) => {
     // e.preventDefault();
     // TechFixAPI.post("/contactus", {
@@ -43,14 +30,14 @@ const ContactUs = () => {
     //     alert(" somthing went wrong ");
     //   });
   };
+
   const resetForm = (e) => {
     e.preventDefault();
-    setData({
-      sender_name: "",
-      sender_email: "",
-      subject: "",
-      msg: "",
-    });
+    setData({});
+  };
+
+  const validatePhoneNumber = () => {
+    console.log(phoneNumber);
   };
 
   const handle = (e) => {
@@ -61,8 +48,6 @@ const ContactUs = () => {
   };
   return (
     <ContactUsStyled>
-      <TopHead />
-      <Header />
       <div className="top">
         <img src={wallpaper} className="contactUsImg" />
       </div>
@@ -75,54 +60,71 @@ const ContactUs = () => {
                 <a href="https://www.gps.ie/wearable-gps/">Kids wearables</a>
               </iframe>
             </div>
+            <div className="businesInfo">
+              <h5>Hours</h5>
+              <div>M - F &nbsp; 10:00 AM - 7:00 PM</div>
+              <div>Sat &nbsp; 12:00 AM - 5:00 PM</div>
+              <div>Sun &nbsp; Closed</div>
+              <br />
+              <h5>Customer Service</h5>
+              <div>
+                <BsWhatsapp />
+                &nbsp; 919-537-6191
+              </div>
+              <div>
+                <BsPhone /> &nbsp; 919-301-8950
+              </div>
+              <div>
+                <BsEnvelope /> &nbsp;Support@techfix-raleigh.com
+              </div>
+              <br />
+            </div>
           </div>
           <div className="ContactUsBodyForm">
             <Form onSubmit={(e) => submit(e)}>
-              <Row className="mb-3">
-                <Form.Group as={Col}>
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control
-                    onChange={(e) => handle(e)}
-                    id="sender_name"
-                    value={data.sender_name}
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    required
-                  />
-                </Form.Group>
-
-                <Form.Group as={Col}>
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    onChange={(e) => handle(e)}
-                    id="sender_email"
-                    value={data.sender_email}
-                    type="email"
-                    name="email"
-                    placeholder="Enter email"
-                    required
-                  />
-                </Form.Group>
-              </Row>
-
               <Form.Group className="mb-3">
-                <Form.Label>Subject</Form.Label>
+                <Form.Label>Name</Form.Label>
                 <Form.Control
                   onChange={(e) => handle(e)}
                   id="subject"
                   value={data.subject}
-                  placeholder="subject"
+                  placeholder="Name"
                   required
                 />
               </Form.Group>
-
+              <Form.Group className="mb-3">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  // onChange={(e) => handle(e)}
+                  //id="email"
+                  //value={data.Email}
+                  placeholder="Email"
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Phone Number</Form.Label>
+                <Form.Control
+                  name="phoneNumber"
+                  minLength={10}
+                  onChange={(event) =>
+                    setPhoneNumber(
+                      HelperMethods.formatFaxAndPhoneNumber(event.target.value)
+                    )
+                  }
+                  id="phoneNumber"
+                  value={phoneNumber}
+                  placeholder="Phone Number"
+                  required
+                />
+              </Form.Group>
+              <small style={{ color: "red" }}>{errorMessage}</small>
               <Form.Group className="mb-3">
                 <Form.Label>Message</Form.Label>
                 <Form.Control
-                  onChange={(e) => handle(e)}
-                  id="msg"
-                  value={data.msg}
+                  // onChange={(e) => handle(e)}
+                  // id="msg"
+                  // value={data.msg}
                   as="textarea"
                   name="message"
                   placeholder="Leave a comment here"
@@ -131,19 +133,46 @@ const ContactUs = () => {
                 />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <div>
+                <p>
+                  By clicking "Submit", you authorize TechFix and its stores to
+                  contact you with marketing information through written
+                  communications, calling or texting you at the phone number(s)
+                  you’ve provided. You understand these calls or texts may use
+                  computer-assisted dialing and/or prerecorded messages. This
+                  authorization is not required to complete the purchase of any
+                  TechFix products. See our{" "}
+                  <Link to="/terms">Privacy Policy.</Link>
+                </p>
+
+                <input
+                  type="checkbox"
+                  // value={isSignature}
+                  // onChange={() => {
+                  //   setIsSignature(true);
+                  // }}
+                  // checked={isSignature}
+                  required
+                />
+                <label>
+                  &nbsp; I Understand and agree to the &nbsp;
+                  <Link to="/terms">Privacy Policy</Link> and{" "}
+                  <Link to="/terms">Terms of service</Link>
+                </label>
+              </div>
+
+              <Button
+                variant="primary"
+                type="submit"
+                //onClick={(e) => validatePhoneNumber()}
+                style={{ marginBottom: "5%", marginTop: "3%" }}
+              >
                 Send Message
               </Button>
             </Form>
           </div>
         </div>
-        <div className="wraps"></div>
       </div>
-
-      <PopUp text="business hour" />
-
-      <Footer />
-      <BottomFooter />
     </ContactUsStyled>
   );
 };

@@ -1,5 +1,3 @@
-const GeneralEnums = {
-  announcmentText: "",
-};
+const GeneralEnums = {};
 
 export { GeneralEnums };

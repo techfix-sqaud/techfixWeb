@@ -57,7 +57,7 @@ const Home = () => {
         <h4>Reliable Repair for All device with professional workers</h4>
         <p className="headP">
           We'll beat any competitors published price for the same repair.
-          starting with a <span className="freeDi">free diagnostics</span>
+          Starting with <span className="freeDi">free diagnostics.</span>
         </p>
 
         <div md={5} className="g-4">

@@ -11,14 +11,10 @@ import {
   Offcanvas,
   Nav,
   NavDropdown,
-  Form,
-  Button,
 } from "react-bootstrap";
-
 const Header = () => {
-  const [showSearch, setShowSearch] = useState(false);
-  const [showTrackModel, setShowTrackModel] = useState(false);
   const [windowDimension, setWindowDimension] = useState(null);
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     setWindowDimension(window.innerWidth);
@@ -35,24 +31,9 @@ const Header = () => {
 
   const isMobile = windowDimension <= 1000;
 
-  const renderModal = () => {
-    setShowTrackModel(true);
-  };
-  const renderSearch = () => {
-    if (!showSearch) {
-      setShowSearch(true);
-    } else {
-      setShowSearch(false);
-    }
-  };
-  const Search = () => {
-    alert("Search");
-    setShowSearch(false);
-  };
   return (
     <TopHeaderStyled>
-      {showTrackModel && <TrackModal />}
-
+      <TrackModal show={modalShow} onHide={() => setModalShow(false)} />
       {isMobile ? (
         <MobileNav />
       ) : (
@@ -82,7 +63,7 @@ const Header = () => {
                   </Nav.Link>
                   <Nav.Link>
                     <Link to="/Landing" id="Link">
-                      Accessories
+                      E-Store
                     </Link>
                   </Nav.Link>
                   <NavDropdown title="Repairs" id="nav-dropdown">
@@ -102,7 +83,7 @@ const Header = () => {
                       </Link>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
-                      <Link to="/consoles" id="Link">
+                      <Link to="/" id="Link">
                         Game Consoles
                       </Link>
                     </NavDropdown.Item>
@@ -111,49 +92,29 @@ const Header = () => {
                   <NavDropdown title="Software" id="nav-dropdown">
                     <NavDropdown.Item>Managment Systems</NavDropdown.Item>
                     <NavDropdown.Item>
-                      <Link to="/mobileApp" id="Link">
+                      {/* <Link to="/mobileApp" id="Link">
                         Mobile Apps
-                      </Link>
+                      </Link> */}
+                      Mobile Apps
                     </NavDropdown.Item>
                     <NavDropdown.Item>Web Applications</NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link>
-                    <Link to="/Login" id="Link">
-                      Login
-                    </Link>
-                  </Nav.Link>
+
                   <Nav.Link>
                     <button
                       className="button"
-                      onClick={() => renderModal()}
+                      onClick={() => setModalShow(true)}
                       id="Link"
                     >
                       Track Repair
                     </button>
                   </Nav.Link>
+                  <Nav.Link>
+                    <Link to="/Login" id="Link">
+                      Login
+                    </Link>
+                  </Nav.Link>
                 </Nav>
-                {showSearch && (
-                  <Form className="d-flex">
-                    <Form.Control
-                      type="search"
-                      placeholder="Search"
-                      className="me-2"
-                      aria-label="Search"
-                    />
-                    <Button variant="outline-primary" onClick={() => Search()}>
-                      Search
-                    </Button>
-                  </Form>
-                )}
-
-                {!showSearch && (
-                  <Button
-                    variant="outline-primary"
-                    onClick={() => renderSearch(true)}
-                  >
-                    <FaSearch />
-                  </Button>
-                )}
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
