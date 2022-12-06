@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import iphone from "../../Assets/iphone.png";
 import laptop from "../../Assets/laptop.png";
 import tablet from "../../Assets/ipadCart.png";
 import consoles from "../../Assets/console.jpeg";
 import { Container, Row, Col, Card, Toast } from "react-bootstrap";
+import TechFixAPI from "../Helpers/Axios";
 import About from "../About/About";
 import { useNavigate } from "react-router-dom";
 
@@ -50,6 +51,11 @@ const Home = () => {
       alert("this service is coming soon!");
     }
   };
+  // useEffect(() => {
+  //   TechFixAPI.get("/");
+  //   navigate("");
+  //   console.log(TechFixAPI);
+  // }, []);
   return (
     <HomeStyled>
       <Container>
