@@ -3,15 +3,9 @@ import data from "./data.json";
 import styled from "styled-components";
 import { Figure, Card, Row, Container } from "react-bootstrap";
 import wallpaper from "../src/Assets/wallpaper.png";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import BottomFooter from "./components/Footer/BottomFooter";
-import TopHead from "./components/Header/TopHead";
 const Landing = () => {
   return (
     <LandingStyled>
-      <TopHead />
-      <Header />
       <Figure>
         <Figure.Image alt="silicon cases" src={wallpaper} />
       </Figure>
@@ -35,8 +29,6 @@ const Landing = () => {
           ))}
         </Row>
       </Container>
-      <Footer />
-      <BottomFooter />
     </LandingStyled>
   );
 };

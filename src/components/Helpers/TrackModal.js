@@ -1,22 +1,14 @@
-import React, { useState } from "react";
-import { Form, Button, Modal, Container, ProgressBar } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Form, Button, Modal, ProgressBar } from "react-bootstrap";
 
-const TrackModal = () => {
-  const [show, setShow] = useState(true);
-
-  const handleClose = () => {
-    setShow(false);
-    window.location.reload();
-  };
-
+const TrackModal = (props) => {
   const [Percentage, setPercentage] = useState(98);
-
   const TrackOrder = (event) => {
     event.preventDefault();
     window.confirm("Please enter a valid Tracking number!");
   };
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal {...props} centered>
       <Modal.Header closeButton>
         <Modal.Title>Track your order</Modal.Title>
       </Modal.Header>

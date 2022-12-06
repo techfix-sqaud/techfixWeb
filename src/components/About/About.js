@@ -21,7 +21,7 @@ const About = () => {
             Most iphone screen repair often carried out within 30 minutes. Our
             Technicion have fixed more than 30k devices including cracked
             screens, water damage, defective microphones and speakers, battery
-            issue, in addition for Software issues. we fix it all.
+            issue, in addition for Software issues. We fix it all.
           </p>
         </Col>
       </div>
@@ -32,7 +32,7 @@ const About = () => {
             We strive to satisfy customer, We never ever strive for money, while
             repairing phones, and computers with quality standards. We work to
             create a welcoming environment for our customers, while learning and
-            adjusting to their needs.Our customer they're not just customer,
+            adjusting to their needs. Our customer they're not just customer,
             they're defintely partenrs of our mission and vision to improve our
             service.
           </p>
@@ -54,8 +54,8 @@ const About = () => {
             are not even found by the average repair technician. That's why
             we're comfortable offering warranty and pricing guarantee . we stand
             by the quality of our same-day repair. Whether we're fixing your
-            iPhone, Samsung, PC or Mac. we will try to make looks like a brand
-            new device.
+            iPhone, Samsung, PC's and Mac. We will try to make looks like a
+            brand new device.
           </p>
         </Col>
       </div>

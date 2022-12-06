@@ -1,19 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "../Header/Header";
-import TopHead from "../Header/TopHead";
 import ipad from "../../Assets/hiPad.png";
 import { Row, Col } from "react-bootstrap";
 import Quotes from "../Helpers/Quotes";
 import tablet from "../../Assets/tablet.png";
 import ipadv from "../../Assets/ipad.png";
-import Footer from "../Footer/Footer";
-import BottomFooter from "../Footer/BottomFooter";
+
 const TabletsRepair = () => {
   return (
     <TabletsRepairStyled>
-      <TopHead />
-      <Header />
       <Row className="topOfPage">
         <Col className="leftside">
           <h1>
@@ -31,8 +26,6 @@ const TabletsRepair = () => {
       </div>
 
       <Quotes />
-      <Footer />
-      <BottomFooter />
     </TabletsRepairStyled>
   );
 };

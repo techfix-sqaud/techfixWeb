@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = process.env.TechFixAPI;
+const baseURL = process.env.REACT_APP_TECHFIX_API;
 const TechFixAPI = axios.create({
   baseURL: baseURL,
   Header: {

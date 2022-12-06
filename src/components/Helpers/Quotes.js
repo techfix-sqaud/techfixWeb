@@ -1,32 +1,57 @@
-import React from "react";
-import {
-  Carousel,
-  Row,
-  Col,
-  Button,
-  Container,
-  Form,
-  FloatingLabel,
-} from "react-bootstrap";
+import React, { useRef, useState } from "react";
+import { Row, Col, Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import TechFixAPI from "./Axios";
 import styled from "styled-components";
 const Quotes = () => {
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const deviceRef = useRef();
+  const descriptionRef = useRef();
+  const [isSignature, setIsSignature] = useState(false);
+
+  const resetForm = (e) => {
+    nameRef.current.value = "";
+    emailRef.current.value = "";
+    deviceRef.current.value = "";
+    descriptionRef.current.value = "";
+    setIsSignature(false);
+  };
+  const submit = async (e) => {
+    e.preventDefault();
+    await TechFixAPI.post("api/Quotes/GetQuote", {
+      FullName: nameRef.current.value,
+      Email: emailRef.current.value,
+      deviceModel: deviceRef.current.value,
+      Description: descriptionRef.current.value,
+      signature: isSignature,
+    })
+      .then((res) => {
+        if (res) {
+          alert(" we have recieved your Quote! ");
+          resetForm(e);
+        }
+      })
+      .catch((error) => {
+        alert(error);
+        console.log(error);
+        alert(" somthing went wrong ");
+      });
+  };
   return (
     <QoutesStyled>
       <Container>
         <Row className="getQoute">
           <h2>Quote</h2>
-          <Form>
+          <Form onSubmit={(e) => submit(e)}>
             <Row className="mb-3">
               <Form.Group as={Col}>
                 <Form.Label>Name</Form.Label>
                 <Form.Control
-                  // onChange={(e) => handle(e)}
                   id="sender_name"
-                  // value={data.sender_name}
                   type="text"
                   name="name"
+                  ref={nameRef}
                   placeholder="Name"
                   required
                 />
@@ -35,10 +60,9 @@ const Quotes = () => {
               <Form.Group as={Col}>
                 <Form.Label>Email</Form.Label>
                 <Form.Control
-                  // onChange={(e) => handle(e)}
                   id="sender_email"
-                  // value={data.sender_email}
                   type="email"
+                  ref={emailRef}
                   name="email"
                   placeholder="Email"
                   required
@@ -49,9 +73,8 @@ const Quotes = () => {
             <Form.Group className="mb-3">
               <Form.Label>Device</Form.Label>
               <Form.Control
-                // onChange={(e) => handle(e)}
                 id="device"
-                // value={data.subject}
+                ref={deviceRef}
                 placeholder="Please enter device model number"
                 required
               />
@@ -61,11 +84,10 @@ const Quotes = () => {
               <Form.Label>Description</Form.Label>
 
               <Form.Control
-                // onChange={}
                 id="msg"
-                // value={data.msg}
                 as="textarea"
                 name="message"
+                ref={descriptionRef}
                 placeholder="Descripe your problem"
                 style={{ height: "100px" }}
                 required
@@ -78,12 +100,31 @@ const Quotes = () => {
               you’ve provided. You understand these calls or texts may use
               computer-assisted dialing and/or prerecorded messages. This
               authorization is not required to complete the purchase or lease of
-              any Audi product. See our <Link to="/terms">Privacy Policy.</Link>
+              any TechFix product. See our{" "}
+              <Link to="/terms">Privacy Policy.</Link>
             </p>
+
+            <input
+              type="checkbox"
+              value={isSignature}
+              onChange={() => {
+                setIsSignature(true);
+              }}
+              checked={isSignature}
+              required
+            />
+            <label>
+              &nbsp; I Understand and agree to the &nbsp;
+              <Link to="/terms">Privacy Policy</Link> and{" "}
+              <Link to="/terms">Terms of service</Link>
+            </label>
+            <br></br>
+
+            <Button variant="outline-primary" className="Button" type="submit">
+              Get Quote
+            </Button>
           </Form>
-          <Button variant="outline-primary" className="Button">
-            Get Quote
-          </Button>
+          <br></br>
         </Row>
       </Container>
     </QoutesStyled>

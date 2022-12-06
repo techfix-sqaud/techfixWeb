@@ -25,20 +25,18 @@ import Subscribe from "../Helpers/Subscribe";
 //import TechFixAPI from "../Helpers/Axios";
 
 const Footer = () => {
-  const [showTrackModel, setShowTrackModel] = useState(false);
   const [showSubscriberModel, setSubscriberModel] = useState(false);
-
-  const renderModal = () => {
-    setShowTrackModel(true);
-  };
+  const [modalShow, setModalShow] = useState(false);
   const renderSubscriberModal = () => {
     setSubscriberModel(true);
   };
-
   return (
     <FooterStyled>
-      {showTrackModel && <TrackModal />}
-      {showSubscriberModel && <Subscribe />}
+      <TrackModal show={modalShow} onHide={() => setModalShow(false)} />
+      <Subscribe
+        show={showSubscriberModel}
+        onHide={() => setSubscriberModel(false)}
+      />
       <Container>
         <div className="wrap">
           <Col>
@@ -70,7 +68,7 @@ const Footer = () => {
             <a href="mailto: career@techfix-raleigh.com">Career</a>
             <Nav.Link>
               <button
-                onClick={() => renderModal()}
+                onClick={() => setModalShow(true)}
                 className="button"
                 id="Link"
               >
@@ -123,7 +121,7 @@ const Footer = () => {
             <Button
               style={{ marginBottom: "2%" }}
               variant="outline-light"
-              onClick={() => renderSubscriberModal()}
+              onClick={() => setSubscriberModel(true)}
             >
               Join Now
             </Button>
@@ -136,7 +134,9 @@ const Footer = () => {
 };
 
 const FooterStyled = styled.div`
-  background-color: #0000b9;
+  /*background-color: #0000b9;*/
+  /*background-color: #081c4b;*/
+  background-color: #040280;
   text-align: justify;
   color: white;
   padding: 0.5%;

@@ -2,15 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Table, Button } from "react-bootstrap";
-import AdminSideBar from "../sidebar/AdminSideBar";
 const Customers = () => {
   const navigate = useNavigate();
 
   return (
     <CustomersStyled>
-      <div className="Main">
-        <AdminSideBar />
-      </div>
       <div className="c2">
         <Button onClick={(e) => navigate("/addnewcustomer")}>
           Add New Customers
@@ -55,7 +51,7 @@ const CustomersStyled = styled.div`
   height: 100%;
   width: 100%;
   .c2 {
-    margin-left: -65%;
+    margin-left: 0%;
     width: 100%;
     background-color: lightyellow;
   }

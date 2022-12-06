@@ -1,48 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Form, Button, Modal, InputGroup, FormControl } from "react-bootstrap";
-
-const Subscribe = () => {
-  const [show, setShow] = useState(true);
-
-  const handleClose = () => {
-    setShow(false);
-    window.location.reload();
+import TechFixAPI from "./Axios";
+const Subscribe = (props) => {
+  const subscriberEmail = useRef();
+  const resetForm = () => {
+    subscriberEmail.current.value = "";
   };
-  const [data, setData] = useState({
-    subscriber_email: "",
-  });
-
-  const Subscribe = (event) => {
-    event.preventDefault();
-    alert("status is ready for pick up");
-  };
-
   const submit = async (e) => {
-    // e.preventDefault();
-    // await TechFixAPI.post("/api/subscriber", {
-    //   subscriber_email: data.subscriber_email,
-    // }).then((res) => {
-    //   let respond = res.data;
-    //   alert(respond);
-    //   resetForm(e);
-    // });
-  };
-
-  const resetForm = (e) => {
     e.preventDefault();
-    setData({
-      subscriber_email: "",
-    });
-  };
-
-  const handle = (e) => {
-    const newData = { ...data };
-    newData[e.target.id] = e.target.value;
-    setData(newData);
-    console.log(newData);
+    await TechFixAPI.post("api/Subscriber/joinNow", {
+      email: subscriberEmail.current.value,
+    })
+      .then((res) => {
+        if (res) {
+          alert(" Welcome to our Newsletter! ");
+          resetForm();
+        }
+      })
+      .catch((error) => {
+        alert(" Email already exist " + error);
+        //alert();
+        resetForm(e);
+      });
   };
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal {...props}>
       <Modal.Header closeButton>
         <Modal.Title>Subscribe</Modal.Title>
       </Modal.Header>
@@ -51,11 +33,9 @@ const Subscribe = () => {
           <InputGroup>
             <FormControl
               className="subEmail"
-              onChange={(e) => handle(e)}
-              id="subscriber_email"
-              value={data.subscriber_email}
+              id="subscriber"
               type="email"
-              name="email"
+              ref={subscriberEmail}
               placeholder="Email"
               required
             />

@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import Header from "../Header/Header";
-import TopHead from "../Header/TopHead";
-import Footer from "../Footer/Footer";
-import BottomFooter from "../Footer/BottomFooter";
 import { Carousel, Container } from "react-bootstrap";
 import desk from "../../Assets/pc.png";
 import imac from "../../Assets/imac.png";
@@ -20,32 +16,32 @@ import Quotes from "../Helpers/Quotes";
 
 const ComputersRepair = () => {
   const [products, setProducts] = useState([]);
-  const api = axios.create({
-    baseURL: `https://localhost:5001/api/products`,
-  });
+  // const api = axios.create({
+  //   baseURL: `https://localhost:5001/api/products`,
+  // });
   const [useToast, setUseToast] = useState(false);
-  async function getData() {
-    try {
-      let res = await axios({
-        url: "https://localhost:5001/api/products",
-        method: "get",
-        timeout: 8000,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      if (res.status == 200) {
-        // test for status you want, etc
-        setProducts(res);
-      }
-      // Don't forget to return something
-      return res.data;
-    } catch (err) {
-      console.error(err);
-    }
-  }
+  // async function getData() {
+  //   try {
+  //     let res = await axios({
+  //       url: "https://localhost:5001/api/products",
+  //       method: "get",
+  //       timeout: 8000,
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+  //     if (res.status == 200) {
+  //       // test for status you want, etc
+  //       setProducts(res);
+  //     }
+  //     // Don't forget to return something
+  //     return res.data;
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // }
 
-  getData().then((res) => console.log(res));
+  // getData().then((res) => console.log(res));
   useEffect(() => {
     setUseToast(true);
   }, []);
@@ -58,8 +54,7 @@ const ComputersRepair = () => {
           color="warning"
         />
       )}
-      <TopHead />
-      <Header />
+
       <Carousel style={{ margintop: "2%", marginbuttom: "2%", zIndex: "-5" }}>
         <Carousel.Item>
           <img className="img" src={imac} alt="iMac slide" />
@@ -146,9 +141,6 @@ const ComputersRepair = () => {
         </div>
         <Quotes />
       </div>
-
-      <Footer />
-      <BottomFooter />
     </ComputersRepairStyled>
   );
 };

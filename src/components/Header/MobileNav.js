@@ -7,6 +7,7 @@ import { Button, Card } from "react-bootstrap";
 const MobileNav = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [showLinkList, setShowLinkList] = useState(false);
+
   const closeNav = () => {
     document.getElementById("myNav").style.width = "0%";
   };
@@ -31,7 +32,6 @@ const MobileNav = () => {
         <img src={logo}></img>
       </Link>
       <FaBars onClick={() => openNav()} className="menu" />
-
       <nav id="myNav" className="overlay">
         <a className="closebtn">
           <FaTimes onClick={() => closeNav()} />
@@ -91,6 +91,14 @@ const MobileNavStyled = styled.div`
     right: 0;
     margin-top: 2%;
     margin-right: 2%;
+    color: black;
+  }
+  .cart {
+    //position: absolute;
+    // right: 0;
+    align-items: center;
+    margin-top: 2%;
+    //margin-right: 10%;
     color: black;
   }
   img {

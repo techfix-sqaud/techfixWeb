@@ -1,15 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
-import TopHead from "../Header/TopHead";
-import BottomFooter from "../Footer/BottomFooter";
 import { Container } from "react-bootstrap";
 const Terms = () => {
   return (
     <TermsStyled>
-      <TopHead />
-      <Header />
       <h1>Terms & Conditions</h1>
       <Container>
         <h4>Version: July, 2022</h4>
@@ -328,8 +322,6 @@ const Terms = () => {
           <span className="span"></span>
         </p>
       </Container>
-      <Footer />
-      <BottomFooter />
     </TermsStyled>
   );
 };
