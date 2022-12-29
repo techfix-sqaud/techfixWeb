@@ -8,6 +8,7 @@ import { Container, Row, Col, Card, Toast } from "react-bootstrap";
 import TechFixAPI from "../Helpers/Axios";
 import About from "../About/About";
 import { useNavigate } from "react-router-dom";
+import SlideShow from "../Helpers/SlideShow";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -58,6 +59,7 @@ const Home = () => {
   // }, []);
   return (
     <HomeStyled>
+      <SlideShow />
       <Container>
         <h1 className="h1qoute">Select your device to Get it fix right now </h1>
         <h4>Reliable Repair for All device with professional workers</h4>
