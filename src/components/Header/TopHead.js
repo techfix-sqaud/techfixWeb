@@ -52,36 +52,44 @@ const TopHead = () => {
           {!isMobile && (
             <BsBag
               className="cart"
-              onClick={(e) => alert("your cart is empty")}
+              onClick={() => alert("your cart is empty")}
             ></BsBag>
           )}
         </div>
-      </Container>
-      <div>
-        {isMobile && <BsBag className="cartMobile" />}
-
-        {showSearch && (
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
+        <div>
+          {isMobile && (
+            <BsBag
+              className="cartMobile"
+              onClick={() => alert("your cart is empty")}
             />
-            {!isMobile ? (
-              <Button variant="outline-primary" onClick={() => Search()}>
-                Search
-              </Button>
-            ) : (
-              <BsSearch className="mobileSearch" onClick={() => Search(true)} />
-            )}
-          </Form>
-        )}
+          )}
 
-        {!showSearch && (
-          <BsSearch className="button" onClick={() => renderSearch(true)} />
-        )}
-      </div>
+          {showSearch && (
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+              />
+              {!isMobile ? (
+                <Button variant="outline-primary" onClick={() => Search()}>
+                  Search
+                </Button>
+              ) : (
+                <BsSearch
+                  className="mobileSearch"
+                  onClick={() => Search(true)}
+                />
+              )}
+            </Form>
+          )}
+
+          {!showSearch && (
+            <BsSearch className="button" onClick={() => renderSearch(true)} />
+          )}
+        </div>
+      </Container>
     </TopHeadStyled>
   );
 };
@@ -99,6 +107,7 @@ const TopHeadStyled = styled.div`
   .cart {
     float: right;
     color: white;
+    // margin-right: 10%;
     font-size: 25px;
     margin-top: -3%;
   }
@@ -107,7 +116,6 @@ const TopHeadStyled = styled.div`
     color: white;
     font-size: 15px;
     margin-top: -8%;
-    margin-right: 2%;
   }
   .d-flex {
     width: 20%;
@@ -118,7 +126,7 @@ const TopHeadStyled = styled.div`
   .button {
     float: right;
     color: white;
-    margin-right: 8%;
+    margin-right: 6%;
     font-size: 25px;
     margin-top: -2.5%;
   }
