@@ -35,7 +35,7 @@ const TopHead = () => {
     setShowSearch(false);
   };
   useEffect(() => {
-    setText("we're Hiring!");
+    setText("Engraving now available!");
     // setAdsText("ios 16 now available!");
   }, []);
 
